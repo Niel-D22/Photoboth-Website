@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Camera - Photobooth Blue</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-brand">photobooth</div>
+      <div class="nav-links">
+        <a href="index.html">home</a>
+        <a href="layout.html" class="active">choose layout</a>
+      </div>
+    </nav>
+
+    <main class="camera-section">
+      <div class="photo-counter" id="photoCounter">0 / 4</div>
+
+      <div class="main-camera-wrapper">
+        <div class="camera-box">
+          <video id="videoPreview" autoplay playsinline></video>
+          <div id="countdown" class="countdown-overlay"></div>
+        </div>
+
+        <div class="side-strip-preview" id="sideStrip">
+          <div
+            id="photoList"
+            style="display: flex; flex-direction: column; gap: 15px"
+          ></div>
+        </div>
+      </div>
+
+      <div class="camera-controls">
+        <div class="action-row">
+          <button class="btn-blue" id="startCapture">
+            <i class="fa-solid fa-camera"></i> START AUTO
+          </button>
+
+          <input type="file" id="fileInput" accept="image/*" hidden multiple />
+          <button
+            class="btn-outline"
+            onclick="document.getElementById('fileInput').click()"
+          >
+            <i class="fa-solid fa-upload"></i> UPLOAD
+          </button>
+
+          <button class="btn-outline" onclick="location.reload()">
+            <i class="fa-solid fa-rotate-left"></i> RESET
+          </button>
+
+          <button class="btn-blue" id="doneBtn" disabled>
+            DONE <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <div class="filter-bar">
+          <div class="circle-item">
+            <i class="fa-solid fa-clock"></i>
+            <select
+              id="timerSelect"
+              style="
+                border: none;
+                background: transparent;
+                font-weight: bold;
+                color: var(--primary-blue);
+                cursor: pointer;
+                outline: none;
+              "
+            >
+              <option value="3">3s</option>
+              <option value="5">5s</option>
+              <option value="10">10s</option>
+            </select>
+          </div>
+          <div
+            class="circle-item"
+            title="Manual Snap"
+            onclick="captureFrame()"
+            style="cursor: pointer"
+          >
+            <i class="fa-solid fa-shutter-button"></i> SNAP
+          </div>
+          <div class="circle-item" title="Zoom Control">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+            <input
+              type="range"
+              id="zoomSlider"
+              min="1"
+              max="3"
+              step="0.1"
+              value="1"
+              style="width: 60px; cursor: pointer"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/camera.js"></script>
+  </body>
+</html>

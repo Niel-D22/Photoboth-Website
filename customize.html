@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customize Your Photo - Photobooth</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="customize-page">
+    <nav class="navbar">
+        <div class="nav-brand">photobooth</div>
+        <div class="nav-links">
+            <a href="index.html">home</a>
+            <a href="contact.html">contact</a>
+            <a href="layout.html" class="active">choose layout</a>
+        </div>
+        <div class="nav-extra"><i class="fa-brands fa-github"></i></div>
+    </nav>
+
+    <main class="editor-container">
+        <div class="preview-section">
+            <div class="canvas-wrapper">
+                <canvas id="photoStripCanvas" width="400" height="1200"></canvas>
+            </div>
+        </div>
+
+        <div class="controls-section">
+            <h2 class="editor-title">Customize Your Photo</h2>
+            
+            <div class="control-group">
+                <label class="group-label">Templates:</label>
+                <div class="template-grid" id="templateGrid">
+                    </div>
+            </div>
+
+<div class="control-group" style="margin-top: 20px;">
+    <label class="group-label">Stickers / Decoration:</label>
+    <div class="template-grid" id="stickerGrid">
+        
+        </div>
+        <div class="sticker-controls" style="margin-top: 15px; display: flex; gap: 10px; justify-content: center;">
+    <button class="btn-outline" onclick="resizeSelected(1.1)" title="Perbesar">
+        <i class="fa-solid fa-plus"></i> Size
+    </button>
+    <button class="btn-outline" onclick="resizeSelected(0.9)" title="Perkecil">
+        <i class="fa-solid fa-minus"></i> Size
+    </button>
+    <button class="btn-outline" onclick="deleteSelected()" style="border-color: #ff4d4d; color: #ff4d4d;">
+        <i class="fa-solid fa-trash"></i> Hapus Stiker
+    </button>
+</div>
+</div>
+
+
+
+            <div class="options-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="addDate" onchange="renderStrip()">
+                    <label for="addDate">Add Date</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="addTime" onchange="renderStrip()">
+                    <label for="addTime">Add Time</label>
+                </div>
+            </div>
+
+            <div class="action-footer">
+                <button class="btn-blue" onclick="downloadPhoto()"><i class="fa-solid fa-download"></i> DOWNLOAD PNG</button>
+                <button class="btn-outline" onclick="printPhoto()"><i class="fa-solid fa-print"></i> PRINT</button>
+                <button class="btn-outline" onclick="window.location.href='index.html'" style="border-color: #ff4d8d; color: #ff4d8d;">RESET</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/editor.js"></script>
+</body>
+</html>

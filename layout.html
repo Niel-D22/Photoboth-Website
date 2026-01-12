@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Choose Layout - Photobooth</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="sub-page">
+    <nav class="navbar">
+      <div class="nav-brand">photobooth</div>
+      <div class="nav-links">
+        <a href="index.html">home</a>
+        <a href="contact.html">contact</a>
+        <a href="layout.html" class="active">choose layout</a>
+      </div>
+    </nav>
+
+    <section class="selection-area">
+      <h2 class="section-title">choose your layout</h2>
+      <p class="section-subtitle">
+        Select from our collection of photo booth layouts
+      </p>
+
+      <div class="carousel-container">
+        <button class="nav-arrow left">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="layout-grid">
+<div class="layout-card" onclick="selectLayout('custom')">
+    <div class="badge green">Custom </div>
+    
+    <div class="layout-preview layout-custom" style="background: white; border: 1px solid #ddd; display: flex; flex-direction: column; gap: 10px; padding: 20px; align-items: center; justify-content: center;">
+        <div style="width: 85%; height: 55px; background: #f0f0f0; border-radius: 4px; border: 1px dashed #ccc;"></div>
+        <div style="width: 85%; height: 55px; background: #f0f0f0; border-radius: 4px; border: 1px dashed #ccc;"></div>
+        <div style="width: 85%; height: 55px; background: #f0f0f0; border-radius: 4px; border: 1px dashed #ccc;"></div>
+    </div>
+    
+    <h3>Plain 3 Pose</h3>
+    <span>Size 6x2 Strip (3 Pose)</span>
+</div>
+
+          <div class="layout-card" onclick="selectLayout('sinchan4')">
+            <div class="badge pink">New Layout</div>
+            <div class="layout-preview layout-sinchan4"></div>
+            <h3>Sinchan4</h3>
+            <span>Size 6x2 Strip (4 Pose)</span>
+          </div>
+          <div class="layout-card" onclick="selectLayout('sinchan1')">
+            <div class="badge pink">New Layout</div>
+            <div class="layout-preview layout-sinchan1"></div>
+            <h3>Sinchan1</h3>
+            <span>Size 4x1 Strip (1 Pose)</span>
+          </div>
+
+          <div class="layout-card" onclick="selectLayout('nota')">
+            <div class="badge yellow">TRY IT NOW</div>
+            <div class="layout-preview layout-nota"></div>
+            <h3>Music Vinyl</h3>
+            <span>Size 6x2 Strip (3 Pose)</span>
+          </div>
+
+          <div class="layout-card" onclick="selectLayout('music')">
+            <div class="badge yellow">TRY IT NOW</div>
+            <div class="layout-preview layout-music"></div>
+            <h3>Music Vinyl</h3>
+            <span>Size 6x2 Strip (3 Pose)</span>
+          </div>
+
+          <div class="layout-card active" onclick="selectLayout('nct')">
+            <div class="badge yellow">TRY IT NOW</div>
+            <div class="layout-preview layout-nct"></div>
+            <h3>To The World</h3>
+            <span>Size 6x2 Strip (4 Pose)</span>
+          </div>
+
+          <div class="layout-card" onclick="selectLayout('pink_heart')">
+            <div class="badge pink">NEW LAYOUT</div>
+            <div class="layout-preview layout-pink"></div>
+            <h3>Hearts Pearls</h3>
+            <span>Size 6x2 Strip (4 Pose)</span>
+          </div>
+
+          <div class="layout-card" onclick="selectLayout('pupy')">
+            <div class="badge yellow">NEW</div>
+            <div class="layout-preview layout-pupy"></div>
+            <h3>Cute Cloudy</h3>
+            <span>Size 6x2 Strip (3 Pose)</span>
+          </div>
+          <div class="layout-card" onclick="selectLayout('Strip4')">
+            <div class="badge yellow">NEW</div>
+            <div class="layout-preview layout-Strip4"></div>
+            <h3>Strip4</h3>
+            <span>Size 2x2 Strip (4 Pose)</span>
+          </div>
+        </div>
+        <button class="nav-arrow right">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <script>
+      function selectLayout(type) {
+        // Menyimpan pilihan layout agar camera.js tahu template mana yang harus dimuat
+        localStorage.setItem("selectedLayout", type);
+        window.location.href = "camera.html";
+      }
+      // Tambahkan ini di dalam tag <script> pada layout.html
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const grid = document.querySelector(".layout-grid");
+        const btnLeft = document.querySelector(".nav-arrow.left");
+        const btnRight = document.querySelector(".nav-arrow.right");
+
+        // Jarak geser per klik = Lebar 1 kartu (220) + Gap (30) = 250px
+        const scrollAmount = 250;
+
+        btnRight.addEventListener("click", () => {
+          grid.scrollLeft += scrollAmount;
+        });
+
+        btnLeft.addEventListener("click", () => {
+          grid.scrollLeft -= scrollAmount;
+        });
+      });
+    </script>
+  </body>
+</html>
