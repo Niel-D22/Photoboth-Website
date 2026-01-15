@@ -483,6 +483,11 @@ body::before {
     background-size: cover;
     background-position: center;
 }
+.layout-coklat {
+    background-image: url('../assets/patterns/coklat.png');
+    background-size: cover;
+    background-position: center;
+}
 .layout-sinchan4 {
     background-image: url('../assets/patterns/sinchan4.png');
     background-size: cover;

@@ -14,6 +14,16 @@ const templateConfigs = {
       { x: 30, y: 790, w: 340, h: 320 },
     ],
   },
+  coklat: {
+    path: "assets/patterns/coklat.png",
+    canvasW: 400,
+    canvasH: 1200,
+    slots: [
+      { x: 38, y: 24, w: 252, h: 380 },
+      { x: 118, y: 421, w: 252, h: 380 },
+      { x: 22, y: 800, w: 255, h: 380 },
+    ],
+  },
   sinchan1: {
     path: "assets/patterns/sinchan1.png",
     canvasW: 500,

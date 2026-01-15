@@ -16,6 +16,8 @@ let zoomLevel = 1; // Default zoom
 const templateData = {
     custom: { total: 3, w: 340, h: 320 },
     sinchan4: { total: 4, w: 350, h: 233 },
+    coklat: { total: 3, w: 200, h: 445 },
+    sinchan1: { total: 1, w: 449, h: 645},
     nota: { total: 3, w: 460, h: 260 },
     music: { total: 3, w: 240, h: 240 },
     nct: { total: 4, w: 400, h: 204 },
